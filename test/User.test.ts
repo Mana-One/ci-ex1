@@ -1,4 +1,4 @@
-import { User } from "../User";
+import { User } from "../src/User";
 import * as E from "fp-ts/Either";
 
 describe("User class", () => {

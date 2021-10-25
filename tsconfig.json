@@ -2,14 +2,11 @@
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
-        "rootDir": "./src",
-        "outDir": "./bin",
         "resolveJsonModule": true,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "strict": true,
         "skipLibCheck": true
     },
-    "include": ["./src"],
-    "exclude": ["./src/**/__*"]
+    "include": ["./src", "./test"]
 }
