@@ -24,5 +24,10 @@ pipeline {
                 }
             }
         }
+        stage("Notify") {
+            steps {
+                discordSend description: "Jenkins Pipeline Build", footer: "Footer Text", result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "https://discord.com/api/webhooks/902209830293483530/ZTWuEDdTlVh7jmPj_DvNYFW5o_c5XFcT-tb7z3WCajaa7zKcy_vM0eq-xJMOssFY3fLY"
+            }
+        }
     }
 }
