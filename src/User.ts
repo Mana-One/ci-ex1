@@ -22,11 +22,9 @@ export class User {
         if (!this.emailRegex.test(input.email)) {
             return E.left("Invalid email");
         }
-
         if (input.firstname.length === 0 || input.lastname.length === 0) {
             return E.left("Missing Firstname and/or Lastname");
         }
-
         if (input.age <= 13) {
             return E.left("Too young");
         }
