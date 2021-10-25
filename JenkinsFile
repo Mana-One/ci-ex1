@@ -5,6 +5,11 @@ pipeline {
         }
     }
     stages {
+        stage("Clone") {
+            steps {
+                git "https://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@github.com/Mana-One/ci-ex1.git"
+            }
+        }
         stage("Build") {
             steps {
                 nodejs(nodeJSInstallationName: 'NodeJs17.0.1', configId: '7ba25d3e-af4d-4cf8-b441-de3555934cac') {
