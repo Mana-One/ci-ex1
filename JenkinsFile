@@ -7,14 +7,14 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                nodejs(nodeJSInstallationName: 'NodeJs17.0.1', configId: '<config-file-provider-id>') {
+                nodejs(nodeJSInstallationName: 'NodeJs17.0.1', configId: '7ba25d3e-af4d-4cf8-b441-de3555934cac') {
                     sh 'npm ci'
                 }
             }
         }
         stage("Test") {
             steps {
-                nodejs(nodeJSInstallationName: 'NodeJs17.0.1', configId: '<config-file-provider-id>') {
+                nodejs(nodeJSInstallationName: 'NodeJs17.0.1', configId: '7ba25d3e-af4d-4cf8-b441-de3555934cac') {
                     sh 'npm test'
                 }
             }
