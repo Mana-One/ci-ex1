@@ -12,6 +12,10 @@ export class User {
         private age: number
     ) {}
 
+    printHello(): void {
+        console.log("Hello");
+    }
+
     static build(input: {
         email: string,
         firstname: string,
