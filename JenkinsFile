@@ -7,7 +7,13 @@ pipeline {
     stages {
         stage("Clone") {
             steps {
-                git "https://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@github.com/Mana-One/ci-ex1.git"
+                git "https://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@github.com/Mana-One/ci-ex1.git"
+            }
+        }
+        stage("SonarQube Analysis") {
+            def scannerHome = tool 'SonarScanner 4.0';
+            withSonarQubeEnv('My SonarQube Server') {
+                sh "${scannerHome}/bin/sonar-scanner"
             }
         }
         stage("Build") {
@@ -24,10 +30,10 @@ pipeline {
                 }
             }
         }
-        stage("Notify") {
+        /*stage("Notify") {
             steps {
                 discordSend description: "Jenkins Pipeline Build", footer: "Footer Text", result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "https://discord.com/api/webhooks/902209830293483530/ZTWuEDdTlVh7jmPj_DvNYFW5o_c5XFcT-tb7z3WCajaa7zKcy_vM0eq-xJMOssFY3fLY"
             }
-        }
+        }*/
     }
 }
