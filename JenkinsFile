@@ -10,10 +10,14 @@ pipeline {
                 git "https://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@github.com/Mana-One/ci-ex1.git"
             }
         }
-        stage("SonarQube Analysis") {
-            def scannerHome = tool 'SonarScanner 4.0';
-            withSonarQubeEnv('first sonar scanner') {
-                sh "${scannerHome}/bin/sonar-scanner"
+        stage('Sonarqube') {
+            environment {
+                scannerHome = tool 'first sonar scanner'
+            }
+            steps {
+                withSonarQubeEnv('sonar-test') {
+                    sh "${scannerHome}/bin/sonar-scanner"
+                }
             }
         }
         stage("Build") {
