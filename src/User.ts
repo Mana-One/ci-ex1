@@ -3,7 +3,7 @@ import * as E from "fp-ts/Either";
 export type InvalidUserMsg = string;
 
 export class User {
-    private static emailRegex = /^[\\w!#$%&’*+/=?`{|}~^-]+(\?\:\\.[\\w!#$%&’*+/=?`{|}~^-]+)*@(\?\:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$/;
+    private static emailRegex = new RegExp("^[\\w!#$%&’*+/=?`{|}~^-]+(\?\:\\.[\\w!#$%&’*+/=?`{|}~^-]+)*@(\?\:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$");
 
     private constructor(
         private email: string, 
